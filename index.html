@@ -180,13 +180,13 @@
 														<div style="margin-bottom: 20px;">
 																<label for="studentClass" class="bmd-label-floating">
 																Domain</label>
-																<input list="domainsSelect" id="DomainSelect" class="form-control" name="domain">
+																<input list="domainsSelect" id="domainSelect" class="form-control" name="domain">
 																<datalist id="domainsSelect">
 																		<option class="option" name="domain" data-value="1" value="Developers">If you can think it, we can code it.</option>
 																		<option class="option" name="domain" data-value="2" value="Finance and Sponsors">More ideas for your money.</option>
 																		<option class="option" name="domain" data-value="3" value="Marketing and Social Media">Getting your message to the world…</option>
 																		<option class="option" name="domain" data-value="4" value="Designers">Design is intelligence made visible.</option>
-																		<option class="option" name="domain" data-value="5" value="Reach Out">The more you hear the better we sound</option>
+																		<option class="option" name="domain" data-value="5" value="Outreach">The more you hear the better we sound</option>
 																</datalist>
 														</div>
 														<div class="form-group label-floating">
@@ -226,6 +226,100 @@
 						</div>
 				</div>
 		</div>
+	<script type="e9f3a9731ad1e7ab4b8b795a-text/javascript">
+      function toggleFormValid()
+			{
+        var name = document.getElementById('name').value;
+        var mail = document.getElementById('emails').value;
+        var phone = document.getElementById('phone').value;
+        var prn = document.getElementById('prn').value;
+				var class = document.getElementById('studentClass').value;
+				var domain = document.getElementById('domainSelect').value;
+				var reason = document.getElementById('reason').value;			
+				
+        var btn = document.getElementById('sbtns').value;
+
+        if (name=='' || mail=='' || phone=='' || prn==''  || class=='' || domain=='' || reason=='') {
+          document.getElementById('sbtns').disabled = true;
+          console.log("invalid");
+        }else{
+          document.getElementById("sbtns").disabled = false;
+          console.log("Valid!");
+        }
+
+      }
+
+      function Validation(){
+        var name = document.getElementById('name').value;
+        var mail = document.getElementById('emails').value;
+        var phone = document.getElementById('phone').value;
+        var prn = document.getElementById('message').value;
+        var class = document.getElementById('studentClass').value;
+				var domain = document.getElementById('domainSelect').value;
+				var reason = document.getElementById('reason').value;
+				var btn = document.getElementById('sbtns').value;
+        if (name=='' || mail=='' || phone=='' || prn==''  || class=='' || domain=='' || reason==''') {
+          alert('All Fields are Required');
+          
+         }
+        if (!isValidname(name)) {
+          alert('Invalid Name');
+           document.getElementById("sbtns").disabled = true;
+        }
+        if(!isValidEmail(mail)) {
+          alert('Invalid Mail Id');
+           document.getElementById("sbtns").disabled = true;
+        }
+        if(!isValidphone(phone)){
+          alert('Invalid Phone Number');
+           document.getElementById("sbtns").disabled = true;
+        }
+				if(!isValidprn(prn)){
+          alert('Invalid PRN');
+           document.getElementById("sbtns").disabled = true;
+        }
+				if(!isValidclass(class)){
+          alert('Invalid class! Select one from list');
+           document.getElementById("sbtns").disabled = true;
+        }
+				if(!isValiddomain(domain)){
+          alert('Invalid domain! Select one from list');
+           document.getElementById("sbtns").disabled = true;
+        }
+
+      }
+      function isValidname(name){
+        var regex = /^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$/;
+      return regex.test(name);
+      }
+      function isValidEmail(mail){
+      var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      return regex.test(mail);
+      }
+      function isValidphone(phone){
+        var regex = /^(\+\d{1,2})?\(?\d{3}\)?\d{3}\d{4}$/;
+        return regex.test(phone);
+      }
+			function isValidprn(prn){
+        if(prn.length==9)
+					return true;
+				else
+					return false;
+      }
+			function isValidclass(class){
+        if(class=="SE1" || class=="SE2" || class=="SE Shift-2" || class=="TE1" || class=="TE2" || class=="TE Shift-2" ||class=="BE1" || class=="BE2" || class=="BE Shift-2" ||)
+					return true;
+				else
+					return false;
+      }
+			function isValiddomain(domain){
+        if(domain=="Developers" || domain=="Finance and Sponsors" || domain=="Marketing and Social Media" || domain=="Designers" || domain=="Outreach")
+					return true;
+				else
+					return false;
+      }
+
+    </script>
 		<script src="js/core/jquery.min.js" type="e9f3a9731ad1e7ab4b8b795a-text/javascript"></script>
 		<script src="js/core/popper.min.js" type="e9f3a9731ad1e7ab4b8b795a-text/javascript"></script>
 		<script src="js/core/bootstrap-material-design.min.js" type="e9f3a9731ad1e7ab4b8b795a-text/javascript"></script>
