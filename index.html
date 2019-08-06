@@ -141,7 +141,7 @@
 												<form role="form" id="contact-form" method="post" action="https://formspree.io/dscmescoe@gmail.com">
 														<div class="form-group">
 																<label for="name" class="bmd-label-floating">Your name</label>
-																<input type="text" name="name" class="form-control" id="name" pattern="^[A-Za-z\s]{1,}[\.]{0,1}[A-Za-z\s]{0,}$" required>
+																<input type="text" name="name" class="form-control" id="name" pattern="^[a-zA-Z ]+[a-zA-Z]{3,50}$" required>
 														</div>
 
 														<div class="form-group">
@@ -152,12 +152,12 @@
 
 														<div class="form-group align">
 																<label for="phone" class="bmd-label-floating">Phone</label>
-																<input type="number" name="phone" class="form-control" id="phone" pattern="^(\+\d{1,2})?\(?\d{3}\)?\d{3}\d{4}$" required>
+																<input type="number" name="phone" class="form-control" id="phone" pattern="^[0-9]{10}$" required>
 														</div>
 
 														<div class="form-group" style="margin-bottom: 40px;">
 														<label for="phone" class="bmd-label-floating">PRN</label>
-														<input type="text" name="prn" class="form-control" id="prn" maxlength="9" minlength="9" required>
+														<input type="text" name="prn" class="form-control" id="prn" pattern="^(([F/S]{1,1})+([0-9]{8,8}))$" required>
 														</div>
 
 														<div style="margin-bottom: 20px;">
